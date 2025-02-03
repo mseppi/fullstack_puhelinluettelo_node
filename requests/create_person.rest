@@ -5,3 +5,11 @@ Content-Type: application/json
   "name": "Matti Meikäläinen",
   "number": "+358-40-1234567"
 }
+
+POST localhost:3001/api/persons
+Content-Type: application/json
+
+{
+  "name": "Matti Meikäläinen",
+  "number": "+358-40-1234567"
+}
