@@ -1,8 +1,8 @@
 const mongoose = require('mongoose')
 
 if (process.argv.length<3) {
-    console.log('give password as argument')
-    process.exit(1)
+  console.log('give password as argument')
+  process.exit(1)
 }
 
 const password = process.argv[2]
@@ -30,16 +30,16 @@ if (process.argv.length === 3) {
     mongoose.connection.close()
   })
 } else {
-    const content = process.argv[3]
-    const number = process.argv[4]
+  const content = process.argv[3]
+  const number = process.argv[4]
 
-    const newPhonenumber = new Phonenumber({
-      content: content,
-      number: number,
-    })
+  const newPhonenumber = new Phonenumber({
+    content: content,
+    number: number,
+  })
 
-    newPhonenumber.save().then(result => {
-        console.log('added ' + content + ' number ' + number + ' to phonebook')
-        mongoose.connection.close()
-    })
+  newPhonenumber.save().then(() => {
+    console.log('added ' + content + ' number ' + number + ' to phonebook')
+    mongoose.connection.close()
+  })
 }
